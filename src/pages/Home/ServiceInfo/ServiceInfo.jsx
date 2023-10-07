@@ -1,27 +1,37 @@
-import { useEffect, useState } from "react";
-import ServiceCards from "./ServiceCards/ServiceCards";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const ServiceInfo = () => {
+const ServiceInfo = ({ item }) => {
+  console.log(item);
 
-    const [serviceInfo, setServiceInfo] = useState([]);
+  const { id, name, image, description } = item || {};
 
-    useEffect(() => {
-        fetch('/services.json')
-          .then(res => res.json())
-          .then(data => setServiceInfo(data))
-    },[])
-
-    return (
-        <div className="mt-20 px-2 bg-[#F3F3F3] py-10">
-            <h2 className="w-max mx-auto text-2xl md:text-5xl font-semibold md:font-medium border-b-2 pb-1 border-green-600">Services</h2>
-            <p className="md:w-2/3 mx-auto text-justify md:text-justify lg:text-center text-gray-600 font-medium mt-5">Explore our diverse range of health and wellness services at WellnessWorld. From revitalizing Yoga and Fitness Retreats to informative Nutrition Seminars, we offer a variety of experiences to nurture your mind, body, and soul. Discover inner peace at our Mindfulness Retreats, explore the latest trends at our Wellness Expos, and embark on a journey of self-discovery with our Meditation Workshops. Join us on the path to well-being and embrace a healthier, happier you with our carefully curated services.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-5 my-10">
-                {
-                    serviceInfo.map(data => <ServiceCards key={data.id} data={data}></ServiceCards>)
-                }
-            </div>
+  return (
+    <div className="border bg-white">
+      <img className="w-full md:h-[280px]" src={image} alt="" />
+      <div className="px-2 mt-2">
+        <h2 className="text-lg md:text-2xl font-semibold">{name}</h2>
+        {description.length > 100 ? (
+          <p className="text-slate-800 font-semibold my-3">
+            {description.slice(0, 103)}...
+          </p>
+        ) : (
+          <p className="text-slate-800 font-semibold my-3">{description}</p>
+        )}
+        <div className="mx-5 md:mx-10 my-8">
+            <Link to={`/service/${id}`}>
+                <button className="text-sm md:text-base font-extrabold text-white bg-green-600 py-1.5 w-full mx-auto rounded-full hover:bg-green-700">
+                  See Details
+                </button>
+            </Link>
         </div>
-    );
+      </div>
+    </div>
+  );
+};
+
+ServiceInfo.propTypes = {
+  item: PropTypes.object.isRequired,
 };
 
 export default ServiceInfo;
