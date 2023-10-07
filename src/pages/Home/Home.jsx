@@ -14,7 +14,9 @@ const Home = () => {
             </div>
             <ServiceInfo></ServiceInfo>
             <Blogs></Blogs>
-            <WhyChooseUs></WhyChooseUs>
+            <div className="bg-sky-100">
+                <WhyChooseUs></WhyChooseUs>
+            </div>
             <Footer></Footer>
         </div>
     );

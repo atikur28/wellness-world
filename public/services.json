@@ -3,42 +3,42 @@
       "id": "1",
       "name": "Health Fairs",
       "image": "https://i.ibb.co/WnFKTvL/health-fair.jpg",
-      "price": 10,
+      "price": "Free Admission",
       "description": "Join our Health Fairs for a comprehensive wellness experience. These events bring together health professionals, fitness experts, and wellness enthusiasts. Explore health screenings, fitness demonstrations, and interactive workshops. Discover the latest in medical advancements and take steps towards a healthier you."
     },
     {
       "id": "2",
       "name": "Yoga and Fitness Retreats",
       "image": "https://i.ibb.co/wr09QTG/yoga-and-fitness.jpg",
-      "price": 500,
+      "price": "$500 - $1,200",
       "description": "Escape to our Yoga and Fitness Retreats for a rejuvenating experience. Immerse yourself in daily yoga and fitness sessions set against serene natural backdrops. Nourish your body with wholesome meals and embrace mindfulness. Recharge, refresh, and return home with renewed energy and vitality."
     },
     {
       "id": "3",
       "name": "Wellness Expos",
       "image": "https://i.ibb.co/rHvrHZY/seminar.jpg",
-      "price": 20,
+      "price": "$10 - $20",
       "description": "Explore the world of wellness at our Wellness Expos. Dive into a day of discovery featuring wellness product showcases, informative seminars, and holistic experiences. Connect with experts and like-minded individuals while exploring the latest trends in health and well-being."
     },
     {
       "id": "4",
       "name": "Meditation Workshops",
       "image": "https://i.ibb.co/n8vdp8R/meditation.jpg",
-      "price": 50,
+      "price": "$30 - $50 per session",
       "description": "Join our Meditation Workshops and embark on a journey of mindfulness and inner peace. Learn meditation techniques, breathing exercises, and mindfulness practices to reduce stress and increase self-awareness. Discover the profound benefits of regular meditation in a supportive and tranquil environment."
     },
     {
       "id": "5",
       "name": "Nutrition Seminars",
       "image": "https://i.ibb.co/ncpkK1Y/nutrition-seminar.jpg",
-      "price": 100,
+      "price": "$50 - $100 per seminar",
       "description": "Enhance your understanding of nutrition with our Nutrition Seminars. Dive deep into topics like balanced diets, mindful eating, and healthy meal planning. Our expert speakers provide valuable insights to help you make informed dietary choices and optimize your overall health."
     },
     {
       "id": "6",
       "name": "Mindfulness Retreats",
       "image": "https://i.ibb.co/hm5gF9Q/mindfullness-retreats.jpg",
-      "price": 600,
+      "price": "$600 - $1,500",
       "description": "Experience the tranquility of our Mindfulness Retreats. Immerse yourself in mindfulness practices, meditation, and self-discovery. These retreats offer a transformative journey to reduce stress, increase awareness, and cultivate a sense of inner peace. Join us in creating a more mindful and harmonious life."
     }
 ]
