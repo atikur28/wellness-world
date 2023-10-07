@@ -3,16 +3,15 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
-
-  const {user, logOut} = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
     logOut()
       .then()
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
-      })
-  }
+      });
+  };
 
   const navLinks = (
     <>
@@ -38,14 +37,46 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/services"
+          to="/contact"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-green-600" : "text-white"
           }
         >
-          Services
+          Contact Us
         </NavLink>
       </li>
+      {user && (
+        <>
+          <li>
+            <NavLink
+              to="/services"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-green-600"
+                  : "text-white"
+              }
+            >
+              Services
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/blogs"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-green-600"
+                  : "text-white"
+              }
+            >
+              Blogs
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -76,18 +107,30 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="normal-case text-xl md:text-3xl font-bold text-white md:ml-10">WellnessWorld</a>
+        <a className="normal-case text-xl md:text-3xl font-bold text-white md:ml-10">
+          WellnessWorld
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-5 text-lg font-semibold px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end md:mr-10">
-        {
-          user ? 
-          <Link><button onClick={handleLogOut} className="bg-green-600 text-white py-1 px-4 text-sm md:text-lg font-medium rounded-sm">Log out</button></Link>
-          :
-          <Link to="/login"><button className="bg-green-600 text-white py-1 px-4 text-sm md:text-lg font-medium rounded-sm">Login</button></Link>
-        }
+        {user ? (
+          <Link>
+            <button
+              onClick={handleLogOut}
+              className="bg-green-600 text-white py-1 px-4 text-sm md:text-lg font-medium rounded-sm"
+            >
+              Log out
+            </button>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <button className="bg-green-600 text-white py-1 px-4 text-sm md:text-lg font-medium rounded-sm">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

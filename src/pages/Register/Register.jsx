@@ -1,27 +1,56 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../SharedSections/Navbar/Navbar";
 import Footer from "../SharedSections/Footer/Footer";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
+
+  const [registerError, setRegisterError] = useState('');
   
   const {createUser} = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
+    const photoLink = form.get("photoLink");
     const email = form.get("email");
     const password = form.get("password");
-    console.log(name, email, password);
+    console.log(name, photoLink);
+
+    setRegisterError('');
+
+    if(password.length < 6){
+      setRegisterError('Password should be in 6 character!');
+      return;
+    }
+    else if(!/[A-Z]/.test(password)){
+      setRegisterError('Your password should have at least one upper case character!');
+      return;
+    }
+    else if(!/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(password)){
+      setRegisterError('Your password should have at least one special character!');
+      return;
+    }
 
     createUser(email, password)
       .then(result => {
         console.log(result.user);
+        e.target.reset();
+        
+        navigate('/');
+        Swal.fire(
+          'Good job!',
+          'You have been registered..',
+          'success'
+        );
       })
       .catch(error => {
         console.error(error);
+        setRegisterError(error.message);
       })
   };
 
@@ -43,6 +72,17 @@ const Register = () => {
                   name="name"
                   id="name"
                   placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mt-4">Photo Link</h3>
+                <input
+                  className="py-4 px-5 mt-3 w-[280px] md:w-[550px] bg-[#F3F3F3]"
+                  type="photoLink"
+                  name="photoLink"
+                  id="photoLink"
+                  placeholder="Enter your photo link address"
                   required
                 />
               </div>
@@ -72,6 +112,9 @@ const Register = () => {
                 Register
               </button>
             </form>
+            {
+              registerError && <p className="text-red-600 font-semibold text-center">{registerError}</p>
+            }
             <p className="text-[#706F6F] font-semibold text-center my-3">
               Already Have An Account ?{" "}
               <Link to="/login" className="text-green-600">

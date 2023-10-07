@@ -1,28 +1,58 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../SharedSections/Footer/Footer";
 import Navbar from "../SharedSections/Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
-  const {logIn} = useContext(AuthContext);
+  const [loginError, setLoginError] = useState('');
+
+  const {logIn, logInWithGoogle} = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
+
+    setLoginError('');
 
     logIn(email, password)
       .then(result => {
         console.log(result.user);
+        e.target.reset();
+        navigate(location?.state ? location.state : '/');
+        Swal.fire(
+          'Good job!',
+          'You have successfully logged in..',
+          'success'
+        );
       })
       .catch(error => {
         console.error(error);
+        setLoginError(error.message);
       })
   };
+
+  const handleGoogleLogin = () => {
+    logInWithGoogle()
+      .then(result => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : '/');
+        Swal.fire(
+          'You have successfully logged in..',
+          'success'
+        );
+      })
+      .catch(error => {
+        console.error(error);
+        setLoginError(error.message);
+      })
+  }
 
   return (
     <div>
@@ -60,6 +90,9 @@ const Login = () => {
                 Login
               </button>
             </form>
+            {
+              loginError && <p className="text-red-600 font-semibold text-center">{loginError}</p>
+            }
             <p className="text-[#706F6F] font-semibold text-center my-3">
               Dont’t Have An Account ?{" "}
               <Link to="/register" className="text-green-600">
@@ -72,7 +105,7 @@ const Login = () => {
           <p className="text-xl font-semibold  text-center">Or</p>
           <div className="w-max border mx-auto bg-white rounded-full mt-2 hover:bg-slate-100">
             <Link>
-              <button className="flex items-center justify-center gap-3 font-semibold py-2 w-[300px]">
+              <button onClick={handleGoogleLogin} className="flex items-center justify-center gap-3 font-semibold py-2 w-[300px]">
                 <img
                   className="w-5"
                   src="https://i.ibb.co/Pj0MgcP/google.png"
