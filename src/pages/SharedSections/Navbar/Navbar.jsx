@@ -20,7 +20,7 @@ const Navbar = () => {
             isPending ? "pending" : isActive ? "text-green-600" : "text-white"
           }
         >
-          About
+          About Us
         </NavLink>
       </li>
       <li>
@@ -63,7 +63,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="normal-case text-xl md:text-3xl font-bold text-white md:ml-10">Diet Care</a>
+        <a className="normal-case text-xl md:text-3xl font-bold text-white md:ml-10">WellnessWorld</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-5 text-lg font-semibold px-1">{navLinks}</ul>
