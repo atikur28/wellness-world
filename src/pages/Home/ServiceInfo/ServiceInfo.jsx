@@ -6,7 +6,7 @@ const ServiceInfo = ({ item }) => {
   const { id, name, image, price, description } = item || {};
 
   return (
-    <div className="border bg-white" data-aos="fade-up" data-aos-duration="3000">
+    <div className="border bg-white" data-aos="fade-down">
       <img className="w-full md:h-[280px]" src={image} alt="" />
       <div className="px-2 mt-2">
         <h2 className="text-lg md:text-2xl font-semibold">{name}</h2>

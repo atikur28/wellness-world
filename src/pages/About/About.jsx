@@ -13,19 +13,19 @@ const About = () => {
                 </div>
                </div>
             </div>
-            <div className="my-10 px-2" data-aos="fade-right">
+            <div className="my-10 px-2" data-aos="fade-up">
                 <h2 className="text-2xl font-semibold">Our Vision</h2>
                 <p className="text-gray-500 w-[300px] md:w-[600px] font-medium mt-3">Our vision is to create a global community where individuals can access the tools and knowledge to live their best, healthiest lives. We envision a world where well-being is a top priority, and people are inspired to make positive changes in their lives.</p>
             </div>
-            <div className="my-10 px-2 md:ml-32" data-aos="fade-left">
+            <div className="my-10 px-2 md:ml-32" data-aos="fade-up">
                 <h2 className="text-2xl font-semibold">Our Team</h2>
                 <p className="text-gray-500 w-[300px] md:w-[600px] font-medium mt-3">Our dedicated team consists of health enthusiasts, wellness experts, event organizers, and content creators who are passionate about spreading the message of well-being. We work tirelessly to curate the best health and wellness events, create informative content, and provide exceptional user experiences.</p>
             </div>
-            <div className="my-10 px-2" data-aos="fade-right">
+            <div className="my-10 px-2" data-aos="fade-up">
                 <h2 className="text-2xl font-semibold">Get in Touch</h2>
                 <p className="text-gray-500 w-[300px] md:w-[600px] font-medium mt-3">Have questions, feedback, or suggestions? We would love to hear from you! Feel free to reach out to us through our contact form, and connect with us on social media for the latest updates and inspiration on your wellness journey.</p>
             </div>
-            <div className="my-10 px-2 md:ml-32" data-aos="fade-left">
+            <div className="my-10 px-2 md:ml-32" data-aos="fade-up">
                 <h2 className="text-2xl font-semibold">Join Us</h2>
                 <p className="text-gray-500 w-[300px] md:w-[600px] font-medium mt-3">Join the WellnessWorld community today and embark on a path to improved health, greater mindfulness, and a more balanced life. Together, we can make wellness a way of life.</p>
             </div>
