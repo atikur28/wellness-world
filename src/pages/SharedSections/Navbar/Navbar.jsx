@@ -116,7 +116,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end md:mr-10">
         <div className="flex flex-row-reverse items-center justify-center gap-2 mr-1">
-          {user ? <p className="text-bold text-white text-xs lg:text-base text-center">{user.displayName}</p> : <p className="hidden"></p>}
+          {user ? <p className="font-medium text-white text-xs lg:text-base text-center">{user.displayName}</p> : <p className="hidden"></p>}
           {user ? (
             <div className="ml-0.5">
               <img className="w-8 rounded-full" src={user.photoURL} alt="user-photo" />

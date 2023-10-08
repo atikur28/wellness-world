@@ -25,7 +25,7 @@ const ServiceDetail = () => {
                <div className="h-[60vh] flex items-center justify-center text-white">
                 <div className="text-center pb-10">
                    <h1 className="text-xl md:text-4xl font-semibold">Service Detail</h1>
-                   <p className="text-xs md:text-base font-semibold mt-5 w-[300px] md:w-[650px]">Welcome to WellnessWorld Services. Explore our diverse offerings in health, fitness, and mindfulness. Choose the path to your well-being journey with us.</p>
+                   <p className="text-xs md:text-base font-semibold mt-5 w-[300px] md:w-[650px]">Welcome to WellnessWorld Service. Explore our diverse offerings in health, fitness, and mindfulness. Choose the path to your well-being journey with us.</p>
                 </div>
                </div>
             </div>

@@ -12,7 +12,7 @@ const ServiceData = ({service}) => {
                 <h2 className="text-lg md:text-2xl font-semibold mt-3">{name}</h2>
                 <p className="text-slate-500 font-medium mt-1">Price: {price}</p>
                 <p className="text-slate-800 font-semibold my-3 w-[300px] md:w-[600px]">{description}</p>
-                <Link to="/"><button className="btn font-bold">Go Home</button></Link>
+                <Link><button className="btn font-bold">Join Event</button></Link>
             </div>
         </div>
     );
