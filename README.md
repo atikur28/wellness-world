@@ -1,6 +1,6 @@
 # WellnessWorld: Your Path to Holistic Health
 
-Visit the live site: [WellnessWorld Live](https://www.example.com)
+Visit the live site: [WellnessWorld Live](http://wellness-world-28.surge.sh/)
 
 ## Key Features:
 
