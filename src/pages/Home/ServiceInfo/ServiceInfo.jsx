@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 
 const ServiceInfo = ({ item }) => {
 
-  const { id, name, image, description } = item || {};
+  const { id, name, image, price, description } = item || {};
 
   return (
-    <div className="border bg-white">
+    <div className="border bg-white" data-aos="fade-up" data-aos-duration="3000">
       <img className="w-full md:h-[280px]" src={image} alt="" />
       <div className="px-2 mt-2">
         <h2 className="text-lg md:text-2xl font-semibold">{name}</h2>
+        <p className="font-medium">Price: {price}</p>
         {description.length > 100 ? (
           <p className="text-slate-800 font-semibold my-3">
             {description.slice(0, 103)}...

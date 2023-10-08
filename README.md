@@ -5,13 +5,7 @@ Visit the live site: [WellnessWorld Live](https://www.example.com)
 ## Key Features:
 
 1. **Event Listings**: 
-   - Explore a diverse range of health and wellness events, including:
-   => Health Fairs
-   => Yoga and Fitness Retreats
-   => Wellness Expos
-   => Meditation Workshops
-   => Nutrition Seminars
-   => Mindfulness Retreats
+   - Explore a variety of health and wellness events, including Health Fairs, Yoga and Fitness Retreats, Wellness Expos, and more.
 
 2. **User Profiles**: 
    - Create personalized profiles to see favorite events, track attendance, and join events.
@@ -33,3 +27,22 @@ Visit the live site: [WellnessWorld Live](https://www.example.com)
 
 8. **Contact Us**: 
    - You can contact us for any information Without hesitation and can make a appointment for free. 
+
+***
+
+## Answers of the given question:
+
+1. **The correct answer is**: B: ReferenceError: greetign is not defined.
+   - Because: There's a error in the code where you intended to declare and assign a value to the variable greeting, but you mistakenly used greetign instead, which results in a ReferenceError since greetign is not defined.
+
+2. **The correct answer is**: B: TypeError.
+   - Because: The sum function attempts to add a number and a string, resulting in a TypeError. JavaScript doesn't perform implicit type conversion when using the + operator with different data types.
+
+3. **The correct answer is**: A: ['🍕', '🍫', '🥑', '🍔']. Because: 
+   - The info.favoriteFood assignment doesn't affect the food array. It simply changes the value of the favoriteFood property in the info object.
+
+4. **The correct answer is**: B: Hi there, undefined. 
+   - Because: The sayHi function expects an argument name, but it's called without an argument, resulting in undefined for name.
+
+5. **The correct answer is**: C: 3. 
+   - Because: The forEach loop iterates through each element in the nums array, and the condition if (num) checks if the element is truthy (i.e., not equal to 0). There are three truthy elements in the array, so count is incremented three times, resulting in a final value of 3.
