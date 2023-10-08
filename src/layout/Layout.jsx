@@ -9,6 +9,7 @@ import ServiceDetail from "../pages/Home/ServiceInfo/ServiceDetail/ServiceDetail
 import PrivateRoute from "../privateRoute/PrivateRoute";
 import ContactUs from "../pages/ContactUs/ContactUs";
 import AllServices from "../pages/AllServices/AllServices";
+import AllBlogs from "../pages/AllBlogs/AllBlogs";
 
 const createdRouter = createBrowserRouter([
     {
@@ -46,6 +47,11 @@ const createdRouter = createBrowserRouter([
                 loader: () => fetch('/services.json'),
                 element: <AllServices></AllServices>
             },
+            {
+                path: "/blogs",
+                loader: () => fetch('/blogs.json'),
+                element: <AllBlogs></AllBlogs>
+            }
         ]
     }
 ])
