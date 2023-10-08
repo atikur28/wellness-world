@@ -7,6 +7,7 @@ import About from "../pages/About/About";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ServiceDetail from "../pages/Home/ServiceInfo/ServiceDetail/ServiceDetail";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 const createdRouter = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const createdRouter = createBrowserRouter([
             {
                 path: "/about",
                 element: <About></About>
+            },
+            {
+                path: "/contact",
+                element: <ContactUs></ContactUs>
             },
         ]
     }

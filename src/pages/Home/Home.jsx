@@ -7,6 +7,7 @@ import ServiceInfo from "./ServiceInfo/ServiceInfo";
 import WhyChooseUs from "./WhyChooseUs/WhyChooseUs";
 
 const Home = () => {
+
   const allServices = useLoaderData();
 
   return (

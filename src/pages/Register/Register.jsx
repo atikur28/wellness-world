@@ -4,6 +4,7 @@ import Footer from "../SharedSections/Footer/Footer";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
@@ -40,7 +41,15 @@ const Register = () => {
       .then(result => {
         console.log(result.user);
         e.target.reset();
-        
+        updateProfile(result.user, {
+          displayName: name, photoURL: photoLink
+        })
+          .then(result => {
+            console.log(result.user);
+          })
+          .catch(error =>{
+            console.error(error);
+          })
         navigate('/');
         Swal.fire(
           'Good job!',

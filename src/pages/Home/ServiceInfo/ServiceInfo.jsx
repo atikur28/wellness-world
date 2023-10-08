@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const ServiceInfo = ({ item }) => {
-  console.log(item);
 
   const { id, name, image, description } = item || {};
 
